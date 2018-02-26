@@ -1,0 +1,91 @@
+$p:                 #ea320f;
+
+
+$p2:                #8A1807;
+
+$a1:                #E3670B;
+$a2:                #FF4E33;
+$a3:                #DB4B99;
+
+$c1:                #15D67E;
+$c2:                #0BCDE3;
+$c3:                #386B70;
+
+$c4:                #407EE5;
+$c5:                #37E0F2;
+$c6:                #1C3865;
+
+$g1:                linear-gradient(45deg, $p2, $a2);
+$g2:                linear-gradient(45deg, $p, $a1);
+$g3:                linear-gradient(45deg, $p, $a3);
+
+$g4:                linear-gradient(45deg, $c1, $c2);
+$g5:                linear-gradient(45deg, $c4, $c5);
+
+
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #222;
+}
+
+a {
+    color: #444;
+
+    h1, h2, h3, h4, h5, h6, p {
+        color: #222;
+    }
+
+    &:hover {
+        color: $p;
+
+        h1, h2, h3, h4, h5, h6, p {
+            color: $p;
+            text-decoration: none;
+        }
+    }
+    
+    &.anchorWrap {
+        &, &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+.color-p {
+    color: $p;
+}
+
+
+.bg-a1 {
+    background-color: $a1;
+}
+
+.bg-a2 {
+    background-color: $a2;
+}
+
+
+.pipLg {
+    &::after {
+        content: '';
+
+        display: block;
+
+        background-color: $p;
+        width: 48px;
+        height: 6px;
+    }
+}
+
+.pipSm {
+    &::after {
+        content: '';
+
+        display: block;
+
+        background-color: $p;
+        width: 24px;
+        height: 4px;
+    }
+}

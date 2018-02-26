@@ -1,0 +1,94 @@
+$offset:        120px;
+$duration:      0.8s;
+$easing:        cubic-bezier(.19,1,.22,1);
+
+.nessHero {
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: solid 4px #222;
+
+    .nessHeroSlide {
+        position: absolute;
+        top: 48px;
+        left: 200%;
+
+        opacity: 0;
+
+        transition: opacity 0.4s ease-in-out;
+
+        .nessHeroImg {
+            overflow: hidden;
+            
+            img {
+                position: absolute;
+                right: 0;
+                
+                width: 120%;
+                @media (max-width: 575px) {
+                    width: auto;
+                    height: 120%;
+                }
+            }
+        }
+
+        .nessHeroCopy {
+            position: relative;
+            top: $offset;
+
+            transition: top $duration $easing;
+            
+            h2 {
+                // md
+                @media (max-width: 991px) {
+                    font-size: 2.5rem;
+                }
+                // sm
+                @media (max-width: 767px) {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    #nessSliderDotsWrap {
+        color: #333;
+
+        .fa {
+            padding: 1rem 3rem;
+            font-size: 10px;
+            cursor: pointer;
+
+            // xs
+            @media (max-width: 575px) {
+                padding: 0.5rem 1.5rem;
+            }
+        }   
+    }
+}
+
+// animation
+.nessHero .nessHeroSlide {
+
+    &.in {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    &.on {
+        opacity: 1;
+
+        .nessHeroCopy {
+            top: 0;
+        }
+
+        &.out {
+            opacity: 0;
+        }
+    }
+
+    &.off, &.on.off {
+        opacity: 0;
+    }
+}
